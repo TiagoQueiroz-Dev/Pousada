@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "b2Z77YJD+UIMm24UVXt2aCOfJJbadq5nJFjiq4Wttuw=",
-  "Source": "Pousada",
-  "BasePath": "_content/Pousada",
+  "Hash": "7/yvsnDRTixX0vVer35KSjS1HzfM4rGxA/gc1emwSdw=",
+  "Source": "backend",
+  "BasePath": "_content/backend",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

@@ -1,6 +1,0 @@
-@Pousada_HostAddress = http://localhost:5209
-
-GET {{Pousada_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
