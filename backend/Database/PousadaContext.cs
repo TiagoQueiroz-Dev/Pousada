@@ -11,7 +11,6 @@ namespace backend.Database
     public class PousadaContext : IdentityDbContext
     {
         public PousadaContext(DbContextOptions<PousadaContext> options) : base(options){}
-
-        public DbSet<ClienteModel> clientes { get; set; }
+        public DbSet<ClienteModel> Clientes { get; set; } 
     }
 }
