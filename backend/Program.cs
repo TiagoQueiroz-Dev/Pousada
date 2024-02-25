@@ -6,9 +6,12 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> 2b9b74f (Implementaçao da RF - 01 Cadastro do usuario)
+=======
+>>>>>>> b8c0dd168497516aae581edc52be0a2c2dfc3959
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
