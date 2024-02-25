@@ -1,1 +1,4 @@
 **/obj
+**/bin
+**/obj/project.assets.json
+**/obj/project.nuget.cache
