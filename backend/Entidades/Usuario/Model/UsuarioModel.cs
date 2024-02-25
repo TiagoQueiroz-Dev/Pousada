@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace backend.Models
+namespace backend.Entidades.Usuario.Model
 {
-    public class UsuarioCadastroModel
+    public class UsuarioModel
     {
         [Required]
         public string Nome { get; set; }
@@ -15,8 +15,11 @@ namespace backend.Models
         [Required]
         public string Senha { get; set; }
         [Required]
+        public string Telefone { get; set; }
+        public string? Endereço { get; set; }
+        public string? Hitorico_Acesso { get; set; }
+        [Required]
         [Compare("Senha", ErrorMessage = "Senhas Divergentes")]
         public string ConfirmarSenha { get; set; }
-
     }
 }

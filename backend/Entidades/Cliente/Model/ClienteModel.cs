@@ -4,12 +4,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace backend.Models
+namespace backend.Entidades.Cliente.Model
 {
     public class ClienteModel
     {
+        public ClienteModel()
+        {
+            IsDeleted = false;
+        }
+
         [Required]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         [Required]
         public string Nome { get; set; }
         [Required]
@@ -18,5 +23,7 @@ namespace backend.Models
         public int CPF { get; set; }
         [Required]
         public string Email { get; set; }
+        [Required]
+        public bool IsDeleted {get ;set; }
     }
 }
