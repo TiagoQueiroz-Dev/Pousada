@@ -1,4 +1,5 @@
 using backend.Database;
+using backend.Repository.Usuarios;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,6 +19,9 @@ builder.Services.AddDbContext<PousadaContext>(opt => {opt.UseMySql(stringconecti
 
 //configuraçao do identity
 builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<PousadaContext>();
+
+//configuraçao das injeçao de dependencias
+builder.Services.AddScoped<IUsuarioRepository,UsuarioRepository>();
 
 var app = builder.Build();
 
