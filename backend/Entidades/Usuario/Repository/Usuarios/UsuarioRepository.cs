@@ -23,7 +23,8 @@ namespace backend.Repository.Usuarios
         {
             var user = new IdentityUser(){
                 UserName = usuario.Nome,
-                Email = usuario.Email
+                Email = usuario.Email,
+                PhoneNumber = usuario.Telefone
             };
 
             var vali_1 = await _userManager.CreateAsync(user,usuario.Senha);
