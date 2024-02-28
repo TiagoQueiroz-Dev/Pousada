@@ -1,4 +1,6 @@
 using backend.Database;
+using backend.Entidades.Cliente.Repository;
+using backend.Entidades.Cliente.Services;
 using backend.Repository.Usuarios;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,9 @@ builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStor
 
 //injeçao de indepencias
 builder.Services.AddScoped<IUsuarioRepository,UsuarioRepository>();
+builder.Services.AddScoped<IClienteRepository,ClienteRepository>();
+builder.Services.AddScoped<ClienteService>();
+
 
 var app = builder.Build();
 

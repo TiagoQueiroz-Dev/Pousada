@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using backend.Database;
 
@@ -10,9 +11,11 @@ using backend.Database;
 namespace backend.Migrations
 {
     [DbContext(typeof(PousadaContext))]
-    partial class PousadaContextModelSnapshot : ModelSnapshot
+    [Migration("20240227185107_atualizacao_clientes")]
+    partial class atualizacaoclientes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -211,14 +214,19 @@ namespace backend.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("backend.Models.ClienteModel", b =>
+            modelBuilder.Entity("backend.Entidades.Cliente.Model.ClienteModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CPF")
-                        .HasColumnType("int");
+                    b.Property<string>("CPF")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("Deletado")
+                        .HasColumnType("tinyint(1)")
+                        .HasColumnName("Deletado");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -231,9 +239,13 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("Tel")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
-                    b.ToTable("clientes");
+                    b.ToTable("Clientes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
